@@ -1,11 +1,14 @@
 const chalk= require('chalk');
-const getNotes= require('./notes');
+const getNotes= require('./notes')
 
-console.log(getNotes());
-console.log(chalk.green('Success!!!!'));
-
-
-
+const command= process.argv[2];
+if (command === 'add') {
+    console.log(chalk.blue('Adding Note'));
+}
+else
+{
+    console.log(chalk.red('No Command Found!'));
+}
 
 // const fs=require('fs');
 // const name=require('./utils');

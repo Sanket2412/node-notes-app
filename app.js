@@ -5,8 +5,21 @@ const getNotes = require("./notes");
 yargs.command({
   command: "add",
   describe: "Add a new note",
-  handler: function () {
-    console.log(chalk.blue.inverse("Adding New Note!"));
+  builder: {
+    title: {
+      describe: "Note Title",
+      demandOption:true,
+      type:'string',
+    },
+    body:{
+      describe: "Note Body",
+      demandOption:true,
+      type:'string',
+    }
+  },
+  handler: function (argv) {
+    console.log("Title :" + argv.title)
+    console.log("Body :"+ argv.body)
   },
 });
 
